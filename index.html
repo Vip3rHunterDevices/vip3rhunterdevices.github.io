@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ViP3R HUNTER </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/bg.png" rel="icon">
+  <link href="assets/img/bg.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Random Color to --accent-color CSS variable -->
+  <script>
+    function getRandomColor() {
+      const colors = ['#1ad88f', '#ff6347', '#4caf50', '#2196f3', '#f44336', '#9c27b0', '#3f51b5'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.documentElement.style.setProperty('--accent-color', randomColor);
+    }
+    getRandomColor();
+  </script>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/bg.png" alt=""> 
+        <h1 class="sitename">ViP3R Hunter</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why</a></li>
+          <li><a href="#devices">Devices</a></li>
+          <li><a href="#how-it-works">How</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#faq">F&Q</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Home Section -->
+    <section id="home" class="home section dark-background">
+
+      <div id="particles-js"></div>
+      
+      <img src="assets/img/header-bg.jpg" alt="" data-aos="fade-in">
+
+      <img src="assets/img/bg.png" alt="" data-aos="fade-in">
+
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>ViP3R HUNTER</h2>
+            <p class="tagline">We are <span class="dynamic-text"></span></p>
+            <a href="#about" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Home Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>Transforming pre-owned smartphones into powerful, cybersecurity-ready devices for ethical hackers and penetration testers.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+
+          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>Empowering Cybersecurity Professionals</h3>
+            <p>
+              At Vip3r Hunter Devices, we specialize in transforming pre-owned Android devices into high-performance cybersecurity tools. 
+              Our mission is to provide ethical hackers, penetration testers, and cybersecurity enthusiasts with devices that come pre-configured with Kali NetHunter, 
+              a NetHunter-supported kernel, and a custom ROM tailored to enhance security and performance.
+            </p>
+            <a href="https://github.com/Vip3rHunterDevices" target="_blank" class="about-btn align-self-center align-self-xl-start"><span>Checkout on Github</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+
+          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-phone"></i>
+                <h4><a href="#about" class="stretched-link">Device Selection and Quality Check</a></h4>
+                <p>We source high-quality, used devices from trusted marketplaces like Quikr, OLX, eBay, and more. 
+                  Each device undergoes a rigorous inspection process to ensure optimal condition and performance before modification.</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-tools"></i>
+                <h4><a href="#about" class="stretched-link">Custom ROM and NetHunter Setup</a></h4>
+                <p>Our expert team installs and configures Kali NetHunter with a NetHunter-supported kernel and custom ROM, 
+                  tailored to meet your specific security needs or one of our recommended setups for optimal performance.</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-paint-bucket"></i>
+                <h4><a href="#about" class="stretched-link">Future Add-Ons & Enhancements</a></h4>
+                <p>We’re constantly innovating! Soon, we’ll be adding unique cybersecurity-themed device skins and back covers to enhance both the aesthetics and functionality of your modded device.</p>
+              </div><!-- Icon-Box -->
+
+              <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-person-gear"></i>
+                <h4><a href="#about" class="stretched-link">Additional Services and Support</a></h4>
+                <p>We also provide ongoing support and additional services to keep your device up-to-date and functioning at its best for your cybersecurity needs.</p>
+              </div><!-- Icon-Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Why Choose ViP3R Hunter Devices Section -->
+    <section id="why" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Why Choose ViP3R Hunter Devices?</h2>
+        <p>Empowering cybersecurity enthusiasts with feature-packed, modded Android devices designed for penetration testing and security assessments.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Service Item 1: Quality-Assured Devices -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-patch-check"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Quality-Assured Devices</a></h4>
+              <p class="description">All devices undergo rigorous testing and quality checks to ensure flawless performance before modification.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service Item 2: Pre-Configured with NetHunter -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-terminal"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Pre-Configured with NetHunter</a></h4>
+              <p class="description">Each device is pre-installed with Kali NetHunter, a NetHunter-supported kernel, and a custom ROM designed for optimal security and performance.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service Item 3: Tailored to Your Needs -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-sliders"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Tailored to Your Needs</a></h4>
+              <p class="description">Customize your device with the ROM of your choice or select from our optimized configurations to meet your cybersecurity goals.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service Item 4: Affordable Pricing -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-currency-dollar"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Affordable Pricing</a></h4>
+              <p class="description">We offer competitive pricing on fully modded Android devices without compromising on quality or performance.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service Item 5: Ongoing Support and Updates -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-headset"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Ongoing Support and Updates</a></h4>
+              <p class="description">We provide continuous support, ensuring your device stays up-to-date with the latest security patches and improvements.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <!-- Service Item 6: Future Add-Ons and Customizations -->
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-palette"></i></div>
+            <div>
+              <h4 class="title"><a href="#why" class="stretched-link">Future Add-Ons and Customizations</a></h4>
+              <p class="description">We’re constantly innovating, with plans to introduce custom device skins, back covers, and more to enhance your modded device.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Choose ViP3R Hunter Devices Section -->
+
+    <!-- Device Section -->
+    <section id="devices" class="devices section dark-background">
+
+      <img src="assets/img/devices-bg.jpg" class="devices-bg" alt="">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Devices that We Modify</h2>
+        <p>Your Next Pentest Weapon is Waiting – Choose from These Top Brands!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Asus.png" alt="Asus" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Google.png" alt="Google" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Motorola.png" alt="Motorola" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Nothing.png" alt="Nothing" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->            
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/OnePlus.png" alt="Oneplus" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Oppo.png" alt="Oppo" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Realme.png" alt="Realme" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Samsung.png" alt="Samsung" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Vivo.png" alt="Vivo" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+            <div class="swiper-slide">
+              <div class="container_phone">
+                <!-- Phone Card -->
+                <div class="phone-card_phone">
+                  <div class="punch-hole"></div>
+                    <div class="info-box d-flex justify-content-center">
+                      <img src="assets/img/logos/Xiaomi.png" alt="Xiaomi" class="info-logo">
+                    </div>
+                </div>
+              </div> <!--Container END-->
+            </div><!-- End device item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Device Section -->
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How Our Service Works</h2>
+        <p>From Request to Delivery – Get Your Fully Modded Device in Just a Few Steps</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-envelope"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 1: Build Request</a></h4>
+              <p class="description">Contact us to submit your device build request. Let us know your hardware preferences and requirements.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-search"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 2: Device Search</a></h4>
+              <p class="description">We search for a matching device in excellent condition from trusted marketplaces like eBay, OLX, and more.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-cash"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 3: Cost Discussion</a></h4>
+              <p class="description">We discuss the cost with you after finding a suitable device. Once the deal is finalized, we proceed with the purchase.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-tools"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 4: Device Modification</a></h4>
+              <p class="description">We modify the device by installing ViP3R Hunter with a custom ROM and a NetHunter-supported kernel.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-truck"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 5: Shipping</a></h4>
+              <p class="description">Once the device is ready, we securely package and ship it to your doorstep. This process may take 7 to 15 days or more.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+          <div class="col-lg-4 col-md-6 step-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-star"></i></div>
+            <div>
+              <h4 class="title"><a href="#how-it-works" class="stretched-link">Step 6: User Review</a></h4>
+              <p class="description">After receiving the modded device, we encourage users to share their experience and provide feedback to improve our services.</p>
+            </div>
+          </div><!-- End Step Item -->
+
+        </div>
+
+      </div>
+      
+    </section><!-- /How It Works Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Meet the Founder</h2>
+        <p>Leading the revolution in modded Android devices with unmatched expertise in cybersecurity and kernel development.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Founder Profile -->
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="Sourabh Panchal">
+                <div class="social">
+                  <a href="https://www.x.com/IamCOD3X" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.github.com/IamCOD3X" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://www.medium.com/IamCOD3X" target="_blank"><i class="bi bi-medium"></i></a>
+                  <a href="https://www.linkedin.com/in/sourabhpanchal" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sourabh Panchal</h4>
+                <span>Founder & Chief Developer</span>
+              </div>
+            </div>
+          </div><!-- End Founder Profile -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our modded Android devices, NetHunter setups, and additional services.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-8">
+
+            <div class="faq-container">
+
+              <!-- FAQ Item 1 -->
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>What is included with a modded device from ViP3R Hunter Devices?</h3>
+                <div class="faq-content">
+                  <p>Our modded devices come pre-installed with Kali NetHunter, a NetHunter-supported kernel, and a custom ROM.
+                    We also perform rigorous quality checks to ensure optimal performance. 
+                    Additionally, we try to include the original stock charger and cable whenever possible, 
+                    but since these are pre-owned devices, we cannot guarantee their availability.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item-->
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Can I choose a custom ROM for my device?</h3>
+                <div class="faq-content">
+                  <p>Yes, you can select a custom ROM of your choice, or you can opt for one of our recommended ROMs to ensure seamless performance and security.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Do you provide support after purchasing a modded device?</h3>
+                <div class="faq-content">
+                  <p>Yes, we offer technical support if you encounter any issues. 
+                    Our team is available to assist with troubleshooting and inquiries. 
+                    However, we do not provide support for future OS updates. 
+                    If you receive a new custom ROM in the future, you can purchase a kernel patch add-on to maintain NetHunter support 
+                    and ensure continued optimal performance and security.
+                  </p>                                 
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How do I order a fully modded Android device?</h3>
+                <div class="faq-content">
+                  <p>Simply visit our website, choose your preferred device, and specify your customization preferences. We’ll handle the rest and notify you once your device is ready to be shipped.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Do you offer cybersecurity add-ons or custom skins?</h3>
+                <div class="faq-content">
+                  <p>Yes! We plan to introduce cybersecurity-themed device skins, back covers, and other add-ons soon to enhance the look and feel of your modded device.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+
+              <!-- FAQ Item 6 -->
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How secure are ViP3R Hunter Devices?</h3>
+                <div class="faq-content">
+                  <p>Our devices are configured with top-notch security measures, including NetHunter kernel support and custom ROMs optimized for security, ensuring a secure and reliable environment for penetration testing.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End FAQ item -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /FAQ Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Reach Out to Us – We're Here to Help!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>Republic of India</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p><a href="mailto:viperkernels@gmail.com">viperkernels@gmail.com</a></p>
+                  
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telegram flex-shrink-0"></i>
+                <div>
+                  <h3>Telegram</h3>
+                  <p><a href="https://t.me/vip3rhunterdevices" target="_blank">ViP3R HUNTER</a></p>
+                  
+                </div>
+              </div>
+            </div><!-- End Info Item -->            
+
+            <div class="col-lg-3 col-md-6">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-whatsapp flex-shrink-0"></i>
+                <div>
+                  <h3>Whatsapp Channel</h3>
+                  <p><a href="https://whatsapp.com/channel/0029VbAr6Lg6xCSRIcJfUu2L" target="_blank">ViP3R HUNTER</a></p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="justify-content-center">
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLScGh0zTOTk-a4X0WfQWLO4JTlwCaIZw7GsopAnN3GCSC--KSA/formResponse" method="POST" target="_blank" class="email-form" data-aos="fade-up" data-aos-delay="200"  onsubmit="return validateCaptcha();">
+                <div class="row gy-4">
+              
+                  <div class="col-md-6">
+                    <input type="text" name="entry.1060635521" class="form-control" placeholder="Your Name" required="">
+                  </div>
+              
+                  <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="entry.1599162339" placeholder="Your Email" required="">
+                  </div>
+
+                  <div class="col-12 ">
+                    <input type="text" class="form-control" name="entry.1304415029" placeholder="Your Telegram" required="">
+                  </div>
+              
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="entry.654838760" placeholder="Subject" required="">
+                  </div>
+              
+                  <div class="col-12">
+                    <textarea class="form-control" name="entry.1468100575" rows="6" placeholder="Message : Don't forget to share your requirements if you are submitting a Device Build Request" required=""></textarea>
+                  </div>
+
+                  <!-- CAPTCHA Section -->
+                  <div class="col-12">
+                      <label>Enter the code shown below:</label>
+                      <input type="text" id="captchaCode" class="form-control" readonly> <!-- Auto-generated CAPTCHA -->
+                  </div>
+
+                  <div class="col-12">
+                      <input type="text" id="captchaInput" class="form-control" placeholder="Enter CAPTCHA" required>
+                  </div>
+                      
+                  <div class="col-12 text-center">
+                    <button type="submit">Send Message</button>
+                  </div>
+              
+                </div>
+              </form>
+            </div><!-- End Contact Form -->
+
+          </div>
+
+        </div>
+
+      </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">ViP3R HUNTER</h3>
+      <p>Pre-Configured, Cybersecurity-Ready Smartphone for Ethical Hackers and Enthusiasts.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/Vip3rHunterDevices" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://t.me/vip3rhunterdevices"  target="_blank"><i class="bi bi-telegram"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbAr6Lg6xCSRIcJfUu2L" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <div class="copyright">
+        <span>©</span> <span>All Rights Reserved</span>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://github.com/IamCOD3X" target="_blank">IamCOD3X</a> 
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- JS Files -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/tagline.js"></script>
+  <script src="assets/js/captcha.js"></script>
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/random-colours.js"></script>
+</body>
+
+</html>
