@@ -14,6 +14,10 @@ function validateCaptcha(event) {
         return false; // Stop form submission
     }
 
+    // If CAPTCHA is correct, submit the form programmatically
+    document.getElementById("contactForm").submit();
+
+    document.getElementById("contactForm").reset();
     generateCaptcha(); // Refresh CAPTCHA after successful submission
     return true; // Allow form submission
 }
