@@ -1026,6 +1026,82 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Addon Section
+--------------------------------------------------------------*/
+.addons .addons-item {
+  position: relative;
+}
+
+.addons .addons-item .icon {
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 5%;
+  transition: 0.5s;
+  border: 1px solid var(--accent-color);
+  margin-right: 20px;
+}
+
+.addons .addons-btn {
+  padding: 8px 30px 9px 30px;
+  color: var(--accent-color);
+  border-radius: 5px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--accent-color);
+}
+
+.addons .addons-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.addons .addons-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.addons .addons-item .icon i {
+  color: var(--contrast-color);
+  font-size: 24px;
+  line-height: 0;
+}
+
+.addons .addons-item:hover .icon {
+  background: var(--surface-color);
+}
+
+.addons .addons-item:hover .icon i {
+  color: var(--accent-color);
+}
+
+.addons .addons-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.addons .addons-item .title a {
+  color: var(--heading-color);
+}
+
+.addons .addons-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.addons .addons-item .description {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
