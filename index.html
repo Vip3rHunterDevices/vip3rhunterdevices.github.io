@@ -59,6 +59,7 @@
           <li><a href="#addons">Addons</a></li>
           <li><a href="#faq">F&Q</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#review">Reviews</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -693,7 +694,7 @@
     </section><!-- /FAQ Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section light-background">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
@@ -799,6 +800,84 @@
 
     </section><!-- /Contact Section -->
 
+    <!-- Review Section Starts-->
+    <section id="review" class="review section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What Our Users Say</h2>
+        <p>Feedback from users across the globe</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="review-carousel-wrapper">
+          <div class="review-carousel" id="review-carousel">
+            <!-- Reviews will be injected here -->
+          </div>
+        </div>
+      </div>
+
+    </section>        
+
+    <section id="review-add" class="review section light-background"> 
+      <!-- Add Review -->
+      <div class="container section-title">
+        <h2>Submit Your Review</h2>
+        <p>Help others by sharing your experience with our ViP3R HUNTER Device!</p>
+      </div>
+
+      <!-- Review Form -->
+      <div class="container" data-aos="fade-up" data-aos-delay="200">
+        <div class="justify-content-center">
+          <form id="reviewForm" action="https://docs.google.com/forms/d/e/1FAIpQLScAOPqsvHBIbjr0VGWhzgGcfGTIGAtRJmarcXCXRnkia95srA/formResponse" method="POST" target="_blank" class="email-form-review" data-aos="fade-up" data-aos-delay="200" onsubmit="return validateMathCaptcha()">
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <input type="text" name="entry.1219447348" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="entry.470147524" class="form-control" placeholder="Device Purchased" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" name="entry.327042576" class="form-control" placeholder="Country" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="entry.1337392290" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="col-12">
+                <select name="entry.1069614927" class="form-control" required>
+                  <option value="">Select Star Rating</option>
+                  <option value="⭐️">⭐️</option>
+                  <option value="⭐️⭐️">⭐️⭐️</option>
+                  <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+                  <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+                  <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div class="textarea-wrapper">
+                  <textarea name="entry.933649356" class="form-control" placeholder="Your Review" rows="5" required></textarea>
+                  <div class="char-counter" id="charCounter">0 / 250</div>
+                </div>
+              </div>
+              
+              <!-- Math CAPTCHA Section -->
+              <div class="col-12">
+                <label for="mathCaptcha">Solve the math problem below:</label>
+                <input type="text" id="mathQuestion" class="form-control" readonly>
+              </div>
+
+              <div class="col-12">
+                <input type="number" id="mathAnswer" class="form-control" placeholder="Your Answer" required>
+              </div>
+
+              <div class="col-12 text-center">
+                <button type="submit">Submit Review</button>
+              </div>  
+            </div>
+          </form>
+        </div>
+      </div>                
+
+    </section>    
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -834,6 +913,7 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
   <!-- JS Files -->
   <script src="assets/js/main.js"></script>
@@ -841,6 +921,9 @@
   <script src="assets/js/captcha.js"></script>
   <script src="assets/js/particles.js"></script>
   <script src="assets/js/player.js"></script>
+  <script src="assets/js/mathscaptcha.js"></script>
+  <script src="assets/js/review.js"></script>
+  <script src="assets/js/wordcounter.js"></script>
 </body>
 
 </html>
