@@ -1629,24 +1629,24 @@ section,
 /*REVIEW CAROUSEL*/
 
 .review-carousel-wrapper {
-  overflow: hidden;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-  position: relative;
+  overflow-x: auto;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.review-carousel-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .review-carousel {
   display: flex;
   gap: 30px;
-  animation: scroll-left 120s linear infinite;
-  width: max-content;
-  padding: 10px;
-}
-
-.review-carousel-wrapper:hover .review-carousel {
-  animation-play-state: paused;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
 }
 
 @keyframes scroll-left {
@@ -1660,6 +1660,7 @@ section,
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* subtle 3D lift */
+  scroll-snap-align: start;
   transition: box-shadow 0.3s ease;
   min-height: 320px;
   justify-content: space-between;
@@ -1703,19 +1704,19 @@ section,
 /* Responsive tweaks */
 @media (max-width: 1024px) {
   .review-gs {
-    flex: 0 0 250px;
+    flex: 0 0 290px;
   }
 }
 
 @media (max-width: 768px) {
   .review-gs {
-    flex: 0 0 200px;
+    flex: 0 0 280px;
   }
 }
 
 @media (max-width: 480px) {
   .review-gs {
-    flex: 0 0 180px;
+    flex: 0 0 280px;
     font-size: 12px;
   }
 
