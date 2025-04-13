@@ -1170,6 +1170,30 @@ section,
   z-index: 2;
 }
 
+.devices .devices-btn {
+  padding: 8px 30px 9px 30px;
+  color: var(--accent-color);
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--accent-color);
+}
+
+.devices .devices-btn i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.devices .devices-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 .devices .devices-bg {
   position: absolute;
   inset: 0;
