@@ -1853,6 +1853,85 @@ section,
 }
 
 /*--------------------------------------------------------------
+=== Add-ons Page Section === 
+--------------------------------------------------------------*/
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.addon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  padding: 10px;
+}
+
+.addon-item:hover {
+  transform: scale(1.05);
+}
+
+.addon-item img {
+  width: 200px;
+  height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect: Zoom in a bit */
+.addon-item:hover img {
+  transform: scale(1.1); /* Slight zoom in */
+}
+
+.addon-item h5 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
+  .addons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .addon-item img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .addon-item h5 {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .addons-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .addon-item img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .addon-item h5 {
+    font-size: 0.9rem;
+  }
+}
+
+/*--------------------------------------------------------------
 # Scroll Bar Section
 --------------------------------------------------------------*/
 /* Scrollbar width */
