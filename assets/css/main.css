@@ -880,6 +880,80 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Common Section
+--------------------------------------------------------------*/
+
+.common {
+  width: 100%;
+  min-height: 40vh;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a); /* Default dark gradient */
+  transition: background 1s ease-in-out; /* Smooth transition */
+}
+
+/* Background Image */
+.common img:first-of-type {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Logo Image */
+.common img:nth-of-type(2) {
+  position: absolute;
+  z-index: 2; /* Above the background */
+  width: auto; /* Keep original size */
+  height: auto; /* Keep original size */
+  max-width: 250px; /* Adjust as needed */
+  max-height: 250px;
+}
+
+.common:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.common .container {
+  position: relative;
+  z-index: 3;
+}
+
+
+.common h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.common p {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .common h2 {
+    font-size: 32px;
+  }
+
+  .common p {
+    font-size: 18px;
+  }
+}
+
+/*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
 .about .content h3 {
