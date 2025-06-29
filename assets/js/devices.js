@@ -7,8 +7,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Currency Conversion
   try {
-    const geo = await fetch("https://ipapi.co/json/").then(r => r.json());
-    const currency = geo.currency || "INR";
+    const geo = await fetch("https://geolocation-db.com/json/").then(r => r.json());
+    const currencyMap = {
+      "US": "USD", "CA": "CAD", "IN": "INR", "GB": "GBP", "AU": "AUD",
+      "DE": "EUR", "FR": "EUR", "JP": "JPY", "AE": "AED", "CN": "CNY"
+    };
+    const countryCode = geo.country_code || "IN";
+    const currency = currencyMap[countryCode] || "INR";
     if (currency !== "INR") {
       const rateRes = await fetch(`https://api.exchangerate.host/latest?base=INR&symbols=${currency}`);
       const rate = (await rateRes.json()).rates[currency];
