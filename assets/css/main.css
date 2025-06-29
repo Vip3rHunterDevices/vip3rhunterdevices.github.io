@@ -1271,7 +1271,7 @@ section,
 }
 
 .devices .devices-btn {
-  padding: 8px 30px 9px 30px;
+  padding: 9px 30px 9px 30px;
   color: var(--accent-color);
   border-radius: 5px;
   margin-top: 15px;
@@ -1397,6 +1397,27 @@ section,
   .devices .device-item p {
     width: 80%;
   }
+}
+
+/*--------------------------------------------------------------
+# Available Devices Section
+--------------------------------------------------------------*/
+.card {
+  background: linear-gradient(360deg, #e4e4e4, var(--accent-color));
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.btn {
+  border-radius: 2px;
 }
 
 /*--------------------------------------------------------------
