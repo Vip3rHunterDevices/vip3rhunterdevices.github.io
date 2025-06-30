@@ -1421,6 +1421,156 @@ section,
 }
 
 /*--------------------------------------------------------------
+# About Device Section
+--------------------------------------------------------------*/
+
+/* === Section Container === */
+#about-device {
+  background: #f8f9fa;
+  padding: 50px 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#about-device h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+#about-device p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* === Device Details Card === */
+#device-details {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: auto;
+}
+
+/* === Image Slider === */
+#image-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  border-radius: 10px;
+}
+
+#image-slider img {
+  height: 300px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  object-fit: cover;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#image-slider img:hover {
+  transform: scale(1.03);
+}
+
+/* === Variant Selectors === */
+#ramRomSelect,
+#androidSelect,
+#customROM {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+  appearance: none;
+}
+
+/* === Specs & Price === */
+#device-specs {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+#device-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 5px;
+}
+
+#total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 25px;
+}
+
+/* === Features List === */
+#supported-features {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+#supported-features li {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* === Accessories === */
+#accessory-options .form-check {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+#accessory-options label {
+  margin-left: 5px;
+}
+
+/* === Form Fields === */
+#order-form input,
+#order-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+#order-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* === Submit Button === */
+#order-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#order-form button:hover {
+  background-color: #0056b3;
+}
+
+/*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
 .team .team-member {

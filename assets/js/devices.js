@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   document.querySelectorAll(".view-details").forEach(btn => {
     btn.addEventListener("click", () => {
       const device = btn.dataset.device;
-      redirect: window.location.href = `device-details.html?device=${encodeURIComponent(device)}`;
+      redirect: window.location.href = `../devices/device-details.html?device=${encodeURIComponent(device)}`;
     });
   });
 });
