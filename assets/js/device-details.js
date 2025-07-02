@@ -141,6 +141,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     customROMSelect.appendChild(opt);
     });
 
+    document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+
+    document.querySelector('meta[property="og:title"]').setAttribute('content', "DEVICE DETAILS : " + deviceId);
+
+    if (deviceId) {
+      document.title = "DEVICE DETAILS : " + deviceId.toUpperCase();
+    }
+
 });
 
 function updateTotalPrice() {
