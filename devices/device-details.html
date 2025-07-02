@@ -63,6 +63,8 @@
 
         <section id="common" class="common page-title dark-background">
 
+            <div id="particles-js"></div>
+
             <img src="../assets/img/header-bg.jpg" alt="" data-aos="fade-in">
             
             <img src="../assets/img/bg.png" alt="" data-aos="fade-in">
@@ -73,7 +75,7 @@
                 <nav class="breadcrumbs">
                 <ol>
                     <li><a href="../devices.html">Devices</a></li>
-                    <li class="current"><a class="device-name"></a></li>
+                    <li class="current"></li><h6 class="device-name"></h6>
                 </ol>
                 </nav>
             </div>
@@ -99,6 +101,7 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
+                <hr>                
             
                 <!-- Config Section -->
                 <div class="container" data-aos="fade-up">
@@ -130,6 +133,7 @@
                         </div>
                     </form>
                 </div>
+                <hr>                
 
                 <p id="device-price">₹0</p>
 
@@ -141,24 +145,29 @@
 
                 <!-- Accessories -->
                 <div>
-                    <h5>Accessories</h5>
+                    <h6>Accessories</h6>
                     <div id="accessory-options" style="margin-left: 1em;"></div>
                 </div>
 
                 <div class="total-price" style="padding-top: 20px;">
                     <strong>Total Price: ₹<span id="totalPrice">0</span></strong>
                 </div>
-
+                
                 &nbsp;
+                <hr>
 
                 <!-- User Form -->
-                <form id="order-form">
-                    <input type="text" id="userName" required placeholder="Name">
-                    <input type="tel" id="userPhone" required placeholder="Phone">
-                    <textarea id="userAddress" required placeholder="Address"></textarea>
-                    <input  hidden id="customROM">
-                    <button onclick="submitOrder()">Get in Touch</button>
-                </form>
+                <div>
+                    <h6>Connect with Seller</h6>
+                    <form id="order-form">
+                        <input type="text" id="userName" required placeholder="Name">
+                        <input type="tel" id="userPhone" required placeholder="Phone">
+                        <textarea id="userAddress" required placeholder="Address"></textarea>
+                        <input  hidden id="customROM">
+                        <button onclick="submitOrder()">Get in Touch</button>
+                    </form>
+                </div>
+                
             </section>
         </section>
 
@@ -201,7 +210,6 @@
 
     <!-- JS File -->
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/tagline-addon.js"></script>
     <script src="../assets/js/particles.js"></script>
     <script src="../assets/js/device-details.js"></script>
 
