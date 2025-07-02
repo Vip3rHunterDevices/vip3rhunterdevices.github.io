@@ -1402,6 +1402,24 @@ section,
 /*--------------------------------------------------------------
 # Available Devices Section
 --------------------------------------------------------------*/
+.bottom-title {
+  padding-top: 60px;
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.bottom-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.bottom-title p {
+  margin-bottom: 0;
+}
+
 .card {
   background: linear-gradient(360deg, #e4e4e4, var(--accent-color));
 }
