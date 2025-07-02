@@ -1,10 +1,10 @@
 {
   "onclite": {
     "name": "Redmi Y3",
-    "basePriceINR": 6999,
+    "basePriceINR": 4999,
     "condition": "Mint",
     "images": [
-      "../assets/img/devices/onclite/onclite.png",
+      "../assets/img/devices/onclite/onclite_1.png",
       "../assets/img/devices/onclite/onclite_2.png",
       "../assets/img/devices/onclite/onclite_3.png",
       "../assets/img/devices/onclite/onclite_4.png",
@@ -12,8 +12,9 @@
       "../assets/img/devices/onclite/onclite_6.png"
     ],
     "variants": [
-      { "ram": "3GB", "rom": "32GB", "android": "13", "multiplier": 1.0 },
-      { "ram": "4GB", "rom": "64GB", "android": "14", "multiplier": 1.15 }
+      { "ram": "3GB", "rom": "32GB", "android": "13" },
+      { "ram": "3GB", "rom": "32GB", "android": "14" },
+      { "ram": "3GB", "rom": "32GB", "android": "15"}
     ],
     "support": {
     "Software Defined Radio (SDR)": [
@@ -50,5 +51,217 @@
         { "name": "Tempered Glass", "price": 100 },
         { "name": "Back Guard", "price": 200 }
     ]
-  }
+  },
+  "rmx2020": {
+    "name": "Realme C3",
+    "basePriceINR": 5999,
+    "condition": "Mint",
+    "images": [
+      "../assets/img/devices/rmx2020/rmx2020_1.png",
+      "../assets/img/devices/rmx2020/rmx2020_2.png",
+      "../assets/img/devices/rmx2020/rmx2020_3.png",
+      "../assets/img/devices/rmx2020/rmx2020_4.png",
+      "../assets/img/devices/rmx2020/rmx2020_5.png",
+      "../assets/img/devices/rmx2020/rmx2020_6.png"
+    ],
+    "variants": [
+      { "ram": "4GB", "rom": "64GB", "android": "13" },
+      { "ram": "4GB", "rom": "64GB", "android": "14" },
+      { "ram": "4GB", "rom": "64GB", "android": "15"}
+    ],
+    "support": {
+    "Software Defined Radio (SDR)": [
+        "HACKRF",
+        "AIRSPY",
+        "SDR",
+        "Mirics MSi2500"
+    ],
+    "Wi-Fi Adapters / Chipsets": {
+        "Realtek": [
+        "RTL8150, RTL8187, RTL8192CU, RTL8188EUS, RTL88xxAU, RTL8192EU, RTL88x2BU, RTL8188FU"
+        ],
+        "MediaTek / Ralink": [
+        "MT7601U, RT2800, RT2500, RT30xx, RT73"
+        ],
+        "Other Wi-Fi": [
+        "ZD1201, ZD1211"
+        ]
+    },
+    "Bluetooth": [
+        "RFCOMM, Bluetooth Drivers"
+    ],
+    "Ethernet / USB Network": [
+        "R8152"
+    ],
+    "System Interfaces": [
+        "USB-HID, System V IPC, CAN"
+    ]
+    },
+    "customROMs": ["LineageOS", "PixelExperience", "EtherealOS"],
+    "accessories": [
+        { "name": "Original Charger", "price": 500 },
+        { "name": "USB Cable", "price": 150 },
+        { "name": "Tempered Glass", "price": 100 },
+        { "name": "Back Guard", "price": 200 }
+    ]
+  },
+  "a205f": {
+    "name": "Samsung A20",
+    "basePriceINR": 4999,
+    "condition": "Mint",
+    "images": [
+      "../assets/img/devices/a205f/a205f_1.png",
+      "../assets/img/devices/a205f/a205f_2.png",
+      "../assets/img/devices/a205f/a205f_3.png",
+      "../assets/img/devices/a205f/a205f_4.png",
+      "../assets/img/devices/a205f/a205f_5.png",
+      "../assets/img/devices/a205f/a205f_6.png"
+    ],
+    "variants": [
+      { "ram": "3GB", "rom": "32GB", "android": "11"}
+    ],
+    "support": {
+    "Software Defined Radio (SDR)": [
+        "HACKRF",
+        "AIRSPY",
+        "SDR",
+        "Mirics MSi2500"
+    ],
+    "Wi-Fi Adapters / Chipsets": {
+        "Realtek": [
+        "RTL8150, RTL8187, RTL8192CU, RTL8188EUS, RTL88xxAU, RTL8192EU, RTL88x2BU, RTL8188FU"
+        ],
+        "MediaTek / Ralink": [
+        "MT7601U, RT2800, RT2500, RT30xx, RT73"
+        ],
+        "Other Wi-Fi": [
+        "ZD1201, ZD1211"
+        ]
+    },
+    "Bluetooth": [
+        "RFCOMM, Bluetooth Drivers"
+    ],
+    "Ethernet / USB Network": [
+        "R8152"
+    ],
+    "System Interfaces": [
+        "USB-HID, System V IPC, CAN"
+    ]
+    },
+    "customROMs": ["OneUI 3.0 with RAM+"],
+    "accessories": [
+        { "name": "Original Charger", "price": 500 },
+        { "name": "USB Cable", "price": 150 },
+        { "name": "Tempered Glass", "price": 100 },
+        { "name": "Back Guard", "price": 200 }
+    ]
+  },
+  "rosemary": {
+    "name": "Redmi Note 10S",
+    "basePriceINR": 5999,
+    "condition": "Mint",
+    "images": [
+      "../assets/img/devices/rosemary/rosemary_1.png",
+      "../assets/img/devices/rosemary/rosemary_2.png",
+      "../assets/img/devices/rosemary/rosemary_3.png",
+      "../assets/img/devices/rosemary/rosemary_4.png",
+      "../assets/img/devices/rosemary/rosemary_5.png",
+      "../assets/img/devices/rosemary/rosemary_6.png"
+    ],
+    "variants": [
+      { "ram": "4GB", "rom": "64GB", "android": "12" },
+      { "ram": "4GB", "rom": "64GB", "android": "13" },
+      { "ram": "4GB", "rom": "64GB", "android": "14" },
+      { "ram": "4GB", "rom": "64GB", "android": "15"}
+    ],
+    "support": {
+    "Software Defined Radio (SDR)": [
+        "HACKRF",
+        "AIRSPY",
+        "SDR",
+        "Mirics MSi2500"
+    ],
+    "Wi-Fi Adapters / Chipsets": {
+        "Realtek": [
+        "RTL8150, RTL8187, RTL8192CU, RTL8188EUS, RTL88xxAU, RTL8192EU, RTL88x2BU, RTL8188FU"
+        ],
+        "MediaTek / Ralink": [
+        "MT7601U, RT2800, RT2500, RT30xx, RT73"
+        ],
+        "Other Wi-Fi": [
+        "ZD1201, ZD1211"
+        ]
+    },
+    "Bluetooth": [
+        "RFCOMM, Bluetooth Drivers"
+    ],
+    "Ethernet / USB Network": [
+        "R8152"
+    ],
+    "System Interfaces": [
+        "USB-HID, System V IPC, CAN"
+    ]
+    },
+    "customROMs": ["LineageOS", "User Choice "],
+    "accessories": [
+        { "name": "Original Charger", "price": 500 },
+        { "name": "USB Cable", "price": 150 },
+        { "name": "Tempered Glass", "price": 100 },
+        { "name": "Back Guard", "price": 200 }
+    ]
+  }, 
+  "lavender": {
+    "name": "Redmi Note 7",
+    "basePriceINR": 5999,
+    "condition": "Mint",
+    "images": [
+      "../assets/img/devices/lavender/lavender_1.png",
+      "../assets/img/devices/lavender/lavender_2.png",
+      "../assets/img/devices/lavender/lavender_3.png",
+      "../assets/img/devices/lavender/lavender_4.png",
+      "../assets/img/devices/lavender/lavender_5.png",
+      "../assets/img/devices/lavender/lavender_6.png"
+    ],
+    "variants": [
+      { "ram": "4GB", "rom": "64GB", "android": "12" },
+      { "ram": "4GB", "rom": "64GB", "android": "13" },
+      { "ram": "4GB", "rom": "64GB", "android": "14" },
+      { "ram": "4GB", "rom": "64GB", "android": "15"}
+    ],
+    "support": {
+    "Software Defined Radio (SDR)": [
+        "HACKRF",
+        "AIRSPY",
+        "SDR",
+        "Mirics MSi2500"
+    ],
+    "Wi-Fi Adapters / Chipsets": {
+        "Realtek": [
+        "RTL8150, RTL8187, RTL8192CU, RTL8188EUS, RTL88xxAU, RTL8192EU, RTL88x2BU, RTL8188FU"
+        ],
+        "MediaTek / Ralink": [
+        "MT7601U, RT2800, RT2500, RT30xx, RT73"
+        ],
+        "Other Wi-Fi": [
+        "ZD1201, ZD1211"
+        ]
+    },
+    "Bluetooth": [
+        "RFCOMM, Bluetooth Drivers"
+    ],
+    "Ethernet / USB Network": [
+        "R8152"
+    ],
+    "System Interfaces": [
+        "USB-HID, System V IPC, CAN"
+    ]
+    },
+    "customROMs": ["LineageOS", "User Choice"],
+    "accessories": [
+        { "name": "Original Charger", "price": 500 },
+        { "name": "USB Cable", "price": 150 },
+        { "name": "Tempered Glass", "price": 100 },
+        { "name": "Back Guard", "price": 200 }
+    ]
+  }       
 }
