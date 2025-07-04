@@ -72,9 +72,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Accessories (if provided)
         const accessoriesDiv = document.getElementById("accessory-options");
         accessoriesDiv.innerHTML = (device.accessories || [
-        { name: "Original Charger with Cable", price: 500 },
-        { name: "Original USB Cable", price: 150 },
-        { name: "Portable Mouse & Keyboard", price: 1050 }
         ]).map(acc =>
         `<div class="form-check">
             <input class="form-check-input accessory" type="checkbox" value="${acc.name}" data-price="${acc.price}" id="${acc.name.replace(/\s+/g, '')}">
