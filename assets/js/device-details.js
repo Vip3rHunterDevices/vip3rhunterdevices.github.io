@@ -202,6 +202,8 @@ function submitOrder() {
   const name = document.getElementById("userName").value.trim();
   const phone = document.getElementById("userPhone").value.trim();
   const address = document.getElementById("userAddress").value.trim();
+  const telegram = document.getElementById("userTelegram").value.trim();
+
   const customROM = document.getElementById("customROM").value;
 
   const ramRom = document.getElementById("ramRomSelect").value;
@@ -220,8 +222,8 @@ function submitOrder() {
     `Custom ROM: ${customROM}\n` +
     `Accessories: ${accessories.join(", ") || "None"}\n` +
     `Total Price: ₹${total}\n\n` +
-    `Customer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}`
+    `Customer Details:\nName: ${name}\nPhone: ${phone}\nTelegram ID: ${telegram}\nAddress: ${address}`
   );
 
-  window.location.href = `mailto:vip3rorder@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:viperkernels@gmail.com?subject=${subject}&body=${body}`;
 }
