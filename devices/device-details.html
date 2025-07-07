@@ -175,16 +175,19 @@
                     <h6>Connect with Seller</h6>
                     &nbsp;
                     <form id="order-form">
-                        <input type="text" id="userName" required placeholder="Name">
-                        <input type="tel" id="userPhone" required placeholder="Phone">
-                        <input type="text" id="userTelegram" required placeholder="@">
-                        <input type="text" id="userEmail" required placeholder="Email">
+                        <div class="form-row">
+                            <input type="text" id="userName" placeholder="Name" required />
+                            <input type="tel" id="userPhone" placeholder="Phone" required />
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" id="userTelegram" placeholder="Telegram" required />
+                            <input type="email" id="userEmail" placeholder="Email" required />                        </div>
                         <textarea id="userAddress" required placeholder="Address"></textarea>
                         <input  hidden id="customROM">
-                        &nbsp;
-                        <div>
+                        <div class="form-row full-width">
+                            <label><b>Solve this:</b> <span id="mathQuestion"></span></label>
                             <input type="text" id="mathCaptcha" required  placeholder="Captcha"/>
-                            <label>Solve this: <span id="mathQuestion"></span></label>
                         </div>
                         <button type="button" id="submitOrderButton" onclick="submitOrder()">Get in Touch</button>
                     </form>

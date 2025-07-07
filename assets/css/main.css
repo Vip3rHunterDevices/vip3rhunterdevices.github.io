@@ -1552,8 +1552,37 @@ section,
   margin-left: 5px;
 }
 
-/* === Form Fields === */
-#order-form input,
+/* === Form Rows === */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-row.full-width input {
+  flex: 1 1 100% !important;  /* Always full width */
+}
+
+/* === Input Fields === */
+#order-form input {
+  flex: 1 1 100%; /* Full width on mobile */
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* === Two inputs side-by-side on larger screens === */
+@media (min-width: 768px) {
+  #order-form input {
+    flex: 1 1 48%; /* Side by side, leave some gap */
+  }
+}
+
+/* === Textarea Styling (unchanged) === */
 #order-form textarea {
   width: 100%;
   padding: 10px;
@@ -1562,9 +1591,6 @@ section,
   margin-bottom: 15px;
   font-size: 1rem;
   background-color: #fff;
-}
-
-#order-form textarea {
   min-height: 100px;
   resize: vertical;
 }
@@ -1580,12 +1606,26 @@ section,
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
-  width: 20%;
-  margin-top: 10px;
+  width: 100%;              /* Full width by default (mobile-first) */
+  margin: 20px auto 0 auto; /* Centered on all screens */
+  max-width: 300px;         /* Prevents it from being too wide on desktops */
 }
 
 #order-form button:hover {
   background-color: #0056b3;
+}
+
+/* Fine-tune sizes for tablets and up */
+@media (min-width: 600px) {
+  #order-form button {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #order-form button {
+    max-width: 20%;
+  }
 }
 
 /*--------------------------------------------------------------
