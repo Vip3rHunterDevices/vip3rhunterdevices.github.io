@@ -196,34 +196,101 @@ for (let i = 1; i <= 5; i++) {
   sliderWrapper.appendChild(slide);
 }
 
+let correctAnswer = 0;
+
+function generateCaptcha() {
+  correctAnswer = Math.floor(100000 + Math.random() * 900000);
+  document.getElementById("mathQuestion").textContent = `${correctAnswer}`;
+}
+
+window.onload = generateCaptcha;
+
+
 function submitOrder() {
+  emailjs.init("Q3G4KXCFoIETcKR5v");
   if (!device) return;
 
   const name = document.getElementById("userName").value.trim();
   const phone = document.getElementById("userPhone").value.trim();
   const address = document.getElementById("userAddress").value.trim();
-  const telegram = document.getElementById("userTelegram").value.trim();
-
+  let rawTelegram = document.getElementById("userTelegram").value.trim();
+  if (rawTelegram.startsWith("@")) {
+    rawTelegram = rawTelegram.slice(1); // Remove @ for t.me link
+  }
+  const telegram = `https://t.me/${rawTelegram}`;
+  const email = document.getElementById("userEmail").value.trim();
   const customROM = document.getElementById("customROM").value;
-
   const ramRom = document.getElementById("ramRomSelect").value;
   const android = document.getElementById("androidSelect").value.replace("Android ", "");
   const variant = `${ramRom} · Android ${android}`;
-
   const accessories = Array.from(document.querySelectorAll("#accessory-options input:checked"))
     .map(input => input.value);
-
   const total = document.getElementById("totalPrice")?.textContent || "Unknown";
 
-  const subject = encodeURIComponent(`New Order: ${device.name}`);
-  const body = encodeURIComponent(
-    `Device: ${device.name}\n` +
-    `Variant: ${variant}\n` +
-    `Custom ROM: ${customROM}\n` +
-    `Accessories: ${accessories.join(", ") || "None"}\n` +
-    `Total Price: ₹${total}\n\n` +
-    `Customer Details:\nName: ${name}\nPhone: ${phone}\nTelegram ID: ${telegram}\nAddress: ${address}`
-  );
+  // ✅ Email Validation
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
 
-  window.location.href = `mailto:viperkernels@gmail.com?subject=${subject}&body=${body}`;
+  if (!/^@?[a-zA-Z0-9_]{5,32}$/.test(rawTelegram)) {
+    alert("Please enter a valid Telegram username (5–32 letters, numbers, or _ only).");
+    return;
+  }
+
+  const time = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour12: true,
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  const templateParams = {
+    name: name,
+    time: time,
+    short_device_info: `${device.name}`,
+    device_info: `${device.name} · ${variant}`,
+    custom_rom: customROM,
+    accessories: accessories.join(", ") || "None",
+    total_price: total,
+    phone: phone,
+    telegram: telegram,
+    email: email,
+    address: address
+  };
+
+  const userAnswer = document.getElementById("mathCaptcha").value.trim();
+    if (userAnswer !== String(correctAnswer)) {
+      alert("Captcha incorrect. Try again.");
+      generateCaptcha(); // regenerate a new one
+      return;
+    }
+  
+  const submitBtn = document.getElementById("submitOrderButton");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  try {
+    emailjs.send("service_nethunterdevices", "template_8xam1cc", templateParams)
+    .then(function(response) {
+      alert("Submitted successfully!");
+      console.log("Submitted successfully!");
+      document.getElementById("order-form").reset();
+      document.getElementById("mathCaptcha").value = "";
+      generateCaptcha();
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Get in Touch";
+    });
+  } catch (err) {
+    console.error("EmailJS exception:", err);
+    alert("Something went wrong. Please try again.");
+    document.getElementById("mathCaptcha").value = "";
+    generateCaptcha();
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Get in Touch";
+  }
 }

@@ -173,13 +173,20 @@
                 <!-- User Form -->
                 <div>
                     <h6>Connect with Seller</h6>
+                    &nbsp;
                     <form id="order-form">
                         <input type="text" id="userName" required placeholder="Name">
                         <input type="tel" id="userPhone" required placeholder="Phone">
-                        <input type="text" id="userTelegram" required placeholder="Telegram ID">
+                        <input type="text" id="userTelegram" required placeholder="@">
+                        <input type="text" id="userEmail" required placeholder="Email">
                         <textarea id="userAddress" required placeholder="Address"></textarea>
                         <input  hidden id="customROM">
-                        <button onclick="submitOrder()">Get in Touch</button>
+                        &nbsp;
+                        <div>
+                            <input type="text" id="mathCaptcha" required  placeholder="Captcha"/>
+                            <label>Solve this: <span id="mathQuestion"></span></label>
+                        </div>
+                        <button type="button" id="submitOrderButton" onclick="submitOrder()">Get in Touch</button>
                     </form>
                 </div>
                 
@@ -222,6 +229,8 @@
     <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- JS File -->
     <script src="../assets/js/main.js"></script>
