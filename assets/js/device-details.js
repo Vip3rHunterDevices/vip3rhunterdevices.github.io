@@ -1,7 +1,88 @@
 let device = null;
+let priceInfo = { symbol: "₹", rate: 1, converted: 0 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-    /* load info */
+  /* load info */
+    async function convertINRToLocalCurrency(inrAmount) {
+      try {
+        console.log("🌍 Detecting location...");
+        const geo = await fetch("https://ipapi.co/json/").then(r => r.json());
+        const countryCode = (geo.country_code || "IN").toUpperCase();
+        console.log("📍 Detected country:", geo.country_name, geo.country_code);
+
+        const currencyMap = {
+          "US": "USD", "CA": "CAD", "IN": "INR", "GB": "GBP", "AU": "AUD",
+          "DE": "EUR", "FR": "EUR", "JP": "JPY", "AE": "AED", "CN": "CNY",
+          "NL": "EUR", "CH": "CHF", "BR": "BRL", "ZA": "ZAR", "RU": "RUB",
+          "KR": "KRW", "SG": "SGD", "MX": "MXN", "SE": "SEK", "NO": "NOK",
+          "DK": "DKK", "PL": "PLN", "TR": "TRY", "NZ": "NZD", "HK": "HKD",
+          "IL": "ILS", "AR": "ARS", "CL": "CLP", "CO": "COP", "TH": "THB",
+          "MY": "MYR", "ID": "IDR", "PH": "PHP", "EG": "EGP", "NG": "NGN",
+          "PK": "PKR", "BD": "BDT", "LK": "LKR", "UA": "UAH", "RO": "RON",
+          "HU": "HUF", "CZ": "CZK", "AT": "EUR", "BE": "EUR", "IE": "EUR",
+          "PT": "EUR", "GR": "EUR", "FI": "EUR", "IS": "ISK", "BG": "BGN",
+          "HR": "HRK", "SI": "EUR", "EE": "EUR", "LV": "EUR", "LT": "EUR",
+          "SK": "EUR", "LU": "EUR", "MT": "EUR", "CY": "EUR", "QA": "QAR",
+          "KW": "KWD", "OM": "OMR", "BH": "BHD", "SA": "SAR", "DZ": "DZD",
+          "MA": "MAD", "TN": "TND", "KE": "KES", "GH": "GHS", "TZ": "TZS",
+          "UG": "UGX", "ZM": "ZMW", "ZW": "ZWL", "ET": "ETB", "SN": "XOF",
+          "CI": "XOF", "BF": "XOF", "ML": "XOF", "NE": "XOF", "TG": "XOF",
+          "BJ": "XOF", "GN": "GNF", "LR": "LRD", "MW": "MWK", "MZ": "MZN",
+          "NA": "NAD", "BW": "BWP", "LS": "LSL", "SZ": "SZL", "CM": "XAF",
+          "GA": "XAF", "CG": "XAF", "CD": "CDF", "AO": "AOA", "MW": "MWK",
+          "PY": "PYG", "UY": "UYU", "VE": "VES"
+        };
+
+        const currencySymbols = {
+          USD: "$", EUR: "€", GBP: "£", CAD: "CA$", AUD: "A$", JPY: "¥",
+          INR: "₹", CNY: "¥", RUB: "₽", KRW: "₩", AED: "د.إ", CHF: "CHF", BRL: "R$",
+          ZAR: "R", SGD: "S$", MXN: "$", SEK: "kr", NOK: "kr", DKK: "kr", PLN: "zł",
+          TRY: "₺", NZD: "NZ$", HKD: "HK$", ILS: "₪", ARS: "$", CLP: "$", COP: "$",
+          THB: "฿", MYR: "RM", IDR: "Rp", PHP: "₱", EGP: "£", NGN: "₦", PKR: "₨",
+          BDT: "৳", LKR: "රු", UAH: "₴", RON: "lei", HUF: "Ft", CZK: "Kč", ISK: "kr",
+          BHD: ".د.ب", QAR: "ر.ق", KWD: "د.ك", OMR: "ر.ع.", SAR: "﷼", MAD: "د.م.",
+          TND: "د.ت", KES: "KSh", GHS: "₵", TZS: "TSh", UGX: "USh", ZMW: "ZK",
+          ZWL: "Z$", ETB: "Br", XOF: "CFA", XAF: "FCFA", GNF: "FG", LRD: "$",
+          MWK: "MK", MZN: "MTn", NAD: "N$", BWP: "P", LSL: "L", CDF: "FC",
+          AOA: "Kz", PYG: "₲", UYU: "$U", VES: "Bs.",
+        };
+
+        const currency = currencyMap[countryCode] || "INR";
+        const symbol = currencySymbols[currency] || `${currency} `;
+
+        console.log("💱 Target currency:", currency);
+
+        if (currency === "INR") {
+          return { symbol: currencySymbols.INR, rate: 1, converted: inrAmount };
+        }
+
+        console.log("🔁 Fetching conversion rate...");
+        const res = await fetch(`https://open.er-api.com/v6/latest/INR`);
+        const json = await res.json();
+
+        let rate = 1;
+        if (json.result === "success" && json.rates && json.rates[currency]) {
+          rate = json.rates[currency];
+        } else {
+          throw new Error("Conversion rate unavailable or API error.");
+        }
+
+        const converted = (inrAmount * rate).toFixed(2);
+
+        console.log(`💰 Conversion rate: 1 INR = ${rate} ${currency}`);
+        console.log(`💵 Converted amount: ${converted} ${currencySymbols[currency] || currency}`);
+
+        return {
+          symbol: currencySymbols[currency] || currency + " ",
+          rate,
+          converted
+        };
+
+      } catch (err) {
+        console.warn("⚠️ Currency conversion failed:", err);
+        return { symbol: "₹", rate: 1, converted: inrAmount };
+      }
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     const deviceId = urlParams.get("device");
@@ -23,7 +104,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         document.querySelectorAll(".device-name").forEach(el => {el.textContent = device.name;});
         document.getElementById("device-condition").textContent = `Condition : ${device.condition}`;
-        document.getElementById("device-price").textContent = `₹${device.basePriceINR}`;
+
+        priceInfo = await convertINRToLocalCurrency(device.basePriceINR);
+        const priceEl = document.getElementById("device-price");
+        priceEl.textContent = `${priceInfo.symbol}${priceInfo.converted}`;
+        priceEl.dataset.currencySymbol = priceInfo.symbol;
+        priceEl.dataset.conversionRate = priceInfo.rate;
 
         // Image Slider
         const slider = document.getElementById("image-slider");
@@ -39,6 +125,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         ramRomSelect.innerHTML = ramRomOptions.map(opt => `<option value="${opt}">${opt}</option>`).join('');
         androidSelect.innerHTML = androidOptions.map(opt => `<option value="${opt}">Android ${opt}</option>`).join('');
 
+        // Supported Features
         const featureList = document.getElementById("supported-features");
         featureList.innerHTML = "";
 
@@ -65,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             categoryItem.appendChild(subList);
             parent.appendChild(categoryItem);
-        }
+          }
         }
         renderSupport(device.support, featureList);
 
@@ -176,7 +263,9 @@ function updateTotalPrice() {
     total += accPrice;
   });
 
-  document.getElementById("totalPrice").textContent = total.toString();
+  const converted = (total * priceInfo.rate).toFixed(2);
+  const totalEl = document.getElementById("totalPrice");
+  totalEl.textContent = `${priceInfo.symbol}${converted}`;
 }
 
 const urlParams = new URLSearchParams(window.location.search);
