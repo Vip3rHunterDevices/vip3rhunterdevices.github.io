@@ -263,5 +263,57 @@
         { "name": "Tempered Glass", "price": 100 },
         { "name": "Back Guard", "price": 200 }
     ]
-  }       
+  },
+  "oneplus3t": {
+    "name": "OnePlus 3T",
+    "basePriceINR": 6999,
+    "condition": "Fair",
+    "images": [
+      "../assets/img/devices/oneplus3t/oneplus3t_1.png",
+      "../assets/img/devices/oneplus3t/oneplus3t_2.png",
+      "../assets/img/devices/oneplus3t/oneplus3t_3.png",
+      "../assets/img/devices/oneplus3t/oneplus3t_4.png",
+      "../assets/img/devices/oneplus3t/oneplus3t_5.png",
+      "../assets/img/devices/oneplus3t/oneplus3t_6.png"
+    ],
+    "variants": [
+      { "ram": "6GB", "rom": "64GB", "android": "11" }
+    ],
+    "support": {
+    "Software Defined Radio (SDR)": [
+        "HACKRF",
+        "AIRSPY",
+        "SDR",
+        "Mirics MSi2500"
+    ],
+    "Wi-Fi Injection":["Supported on Internal WLAN Chipset (QCACLD-2.0) and External Adapters"],
+    "Wi-Fi Adapters / Chipsets": {
+        "Realtek": [
+        "RTL8150, RTL8187, RTL8192CU, RTL8188EUS, RTL88xxAU, RTL8192EU, RTL88x2BU, RTL8188FU"
+        ],
+        "MediaTek / Ralink": [
+        "MT7601U, RT2800, RT2500, RT30xx, RT73"
+        ],
+        "Other Wi-Fi": [
+        "ATH, ZD1201, ZD1211"
+        ]
+    },
+    "Bluetooth": [
+        "RFCOMM, Bluetooth Drivers"
+    ],
+    "Ethernet / USB Network": [
+        "R8152"
+    ],
+    "System Interfaces": [
+        "USB-HID, System V IPC, CAN"
+    ]
+    },
+    "customROMs": ["LineageOS"],
+    "accessories": [
+        { "name": "Original Charger", "price": 500 },
+        { "name": "USB Cable", "price": 150 },
+        { "name": "Tempered Glass", "price": 100 },
+        { "name": "Back Guard", "price": 200 }
+    ]
+  }   
 }
