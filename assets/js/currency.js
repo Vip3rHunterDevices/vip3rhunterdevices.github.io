@@ -62,6 +62,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log(`💰 Conversion rate: 1 INR = ${rate} ${currency}`);
         console.log(`🌐 Displaying prices in ${currency} (${symbol})`);
 
+        window.currencyData = { symbol, code: currency };
+        document.dispatchEvent(new CustomEvent("currencyReady", { detail: window.currencyData }));
+
         // Convert and apply prices
         priceEls.forEach(el => {
             const inr = parseFloat(el.dataset.inr);

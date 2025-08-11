@@ -295,7 +295,7 @@ function generateCaptcha() {
 window.onload = generateCaptcha;
 
 
-function submitOrder() {
+async function submitOrder() {
   emailjs.init("Q3G4KXCFoIETcKR5v");
   if (!device) return;
 
@@ -303,9 +303,7 @@ function submitOrder() {
   const phone = document.getElementById("userPhone").value.trim();
   const address = document.getElementById("userAddress").value.trim();
   let rawTelegram = document.getElementById("userTelegram").value.trim();
-  if (rawTelegram.startsWith("@")) {
-    rawTelegram = rawTelegram.slice(1); // Remove @ for t.me link
-  }
+  if (rawTelegram.startsWith("@")) rawTelegram = rawTelegram.slice(1);
   const telegram = `https://t.me/${rawTelegram}`;
   const email = document.getElementById("userEmail").value.trim();
   const customROM = document.getElementById("customROM").value;
@@ -314,7 +312,10 @@ function submitOrder() {
   const variant = `${ramRom} · Android ${android}`;
   const accessories = Array.from(document.querySelectorAll("#accessory-options input:checked"))
     .map(input => input.value);
-  const total = document.getElementById("totalPrice")?.textContent || "Unknown";
+
+  let totalRaw = document.getElementById("totalPrice")?.textContent || "0";
+  totalRaw = totalRaw.replace(/[^\d.]/g, ""); // remove ₹, commas, spaces
+  const total = parseFloat(totalRaw || "0").toFixed(2);
 
   // ✅ Email Validation
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -322,6 +323,7 @@ function submitOrder() {
     return;
   }
 
+  // Telegram validation
   if (!/^@?[a-zA-Z0-9_]{5,32}$/.test(rawTelegram)) {
     alert("Please enter a valid Telegram username (5–32 letters, numbers, or _ only).");
     return;
@@ -352,34 +354,78 @@ function submitOrder() {
     address: address
   };
 
+  // Captcha check
   const userAnswer = document.getElementById("mathCaptcha").value.trim();
-    if (userAnswer !== String(correctAnswer)) {
-      alert("Captcha incorrect. Try again.");
-      generateCaptcha(); // regenerate a new one
-      return;
-    }
-  
+  if (userAnswer !== String(correctAnswer)) {
+    alert("Captcha incorrect. Try again.");
+    generateCaptcha();
+    return;
+  }
+
   const submitBtn = document.getElementById("submitOrderButton");
   submitBtn.disabled = true;
-  submitBtn.textContent = "Submitting...";
+  submitBtn.textContent = "Processing...";
 
   try {
-    emailjs.send("service_nethunterdevices", "template_8xam1cc", templateParams)
-    .then(function(response) {
-      alert("Submitted successfully!");
-      console.log("Submitted successfully!");
-      document.getElementById("order-form").reset();
-      document.getElementById("mathCaptcha").value = "";
-      generateCaptcha();
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Get in Touch";
+    // Step 1: Send email via EmailJS
+    await emailjs.send("service_nethunterdevices", "template_8xam1cc", templateParams);
+
+    // Step 2: Get PayU hash from Cloudflare Worker
+    const txnid = "TXN" + Date.now();
+    let safeProductInfo = `${device.name} - ${variant}`
+      .replace(/·/g, "-") // Replace middle dot with dash
+      .replace(/[^\x20-\x7E]/g, "") // Remove non-ASCII chars
+      .trim();
+    console.log("🛒 Safe Product Info for PayU:", safeProductInfo);
+    
+    const res = await fetch("https://payment.viperkernels.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        txnid,
+        amount: total,
+        productinfo: safeProductInfo,
+        firstname: name,
+        email: email
+      })
     });
+
+    const data = await res.json();
+
+    // Step 3: Create and submit PayU form
+    const payuForm = document.createElement("form");
+    payuForm.action = "https://test.payu.in/_payment";
+    payuForm.method = "post";
+
+    const fields = {
+      key: data.key,
+      txnid: txnid,
+      amount: total,
+      productinfo: safeProductInfo,
+      firstname: name,
+      email: email,
+      phone: phone,
+      surl: "https://payment-result.viperkernels.workers.dev",
+      furl: "https://payment-result.viperkernels.workers.dev",
+      hash: data.hash
+    };
+    
+    for (const key in fields) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = fields[key];
+      payuForm.appendChild(input);
+    }
+
+    document.body.appendChild(payuForm);
+    payuForm.submit();
+
   } catch (err) {
-    console.error("EmailJS exception:", err);
+    console.error("Order submission error:", err);
     alert("Something went wrong. Please try again.");
-    document.getElementById("mathCaptcha").value = "";
     generateCaptcha();
     submitBtn.disabled = false;
-    submitBtn.textContent = "Get in Touch";
+    submitBtn.textContent = "Buy Now!";
   }
 }

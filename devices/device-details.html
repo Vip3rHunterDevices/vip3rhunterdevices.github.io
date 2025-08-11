@@ -172,7 +172,6 @@
 
                 <!-- User Form -->
                 <div>
-                    <h6>Connect with Seller</h6>
                     &nbsp;
                     <form id="order-form">
                         <div class="form-row">
@@ -189,7 +188,21 @@
                             <label><b>Solve this:</b> <span id="mathQuestion"></span></label>
                             <input type="text" id="mathCaptcha" required  placeholder="Captcha"/>
                         </div>
-                        <button type="button" id="submitOrderButton" onclick="submitOrder()">Get in Touch</button>
+                        <button type="button" id="submitOrderButton" onclick="submitOrder()">Buy Now</button>
+                    </form>
+
+                    <!-- Hidden PayU form -->
+                    <form id="payuForm" action="https://secure.payu.in/_payment" method="post" style="display:none;">
+                        <input type="hidden" name="key">
+                        <input type="hidden" name="txnid">
+                        <input type="hidden" name="amount">
+                        <input type="hidden" name="productinfo">
+                        <input type="hidden" name="firstname">
+                        <input type="hidden" name="email">
+                        <input type="hidden" name="phone">
+                        <input type="hidden" name="surl" value="https://payment-result.viperkernels.workers.dev">
+                        <input type="hidden" name="furl" value="https://payment-result.viperkernels.workers.dev">
+                        <input type="hidden" name="hash">
                     </form>
                 </div>
                 
