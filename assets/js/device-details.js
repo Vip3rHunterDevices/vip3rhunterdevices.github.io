@@ -394,7 +394,8 @@ async function submitOrder() {
 
     // Step 3: Create and submit PayU form
     const payuForm = document.createElement("form");
-    payuForm.action = "https://test.payu.in/_payment";
+    payuForm.action = "https://secure.payu.in/_payment";
+    // payuForm.action = "https://test.payu.in/_payment";
     payuForm.method = "post";
 
     const fields = {
